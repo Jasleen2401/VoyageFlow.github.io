@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>VoyageFlow — Interactive Travel Experience Simulator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Google Font -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- MODAL -->
+  <div class="modal-backdrop" id="modalBackdrop">
+    <div class="modal" id="modal">
+      <div class="modal-icon" id="modalIcon">✅</div>
+      <div class="modal-title" id="modalTitle">Success</div>
+      <div class="modal-text" id="modalMessage">
+        Your details were submitted successfully.
+      </div>
+      <button id="modalButton">Continue</button>
+    </div>
+  </div>
+
+  <main class="shell">
+    <div class="shell-inner">
+
+      <!-- PAGE 1 -->
+      <section class="page active" id="page1">
+        <div class="container">
+          <header class="top-nav">
+            <div class="logo">
+              <span class="logo-pill"></span>
+              VOYAGEFLOW
+            </div>
+          </header>
+
+          <div class="hero-grid">
+            <div>
+              <div class="hero-kicker">Interactive travel simulator</div>
+              <h1 class="hero-title">Design your next adventure, step by step.</h1>
+              <p class="hero-subtitle">
+                From registration to inspiration, from options to a final confirmation —
+                VoyageFlow walks you through a complete travel journey.
+              </p>
+
+              <div class="hero-badges">
+                <span class="badge">🌍 Multi-step travel flow</span>
+                <span class="badge">✈️ Itinerary & price builder</span>
+              </div>
+
+              <!-- Registration Form -->
+              <div class="form-card" id="registrationFormBlock">
+                <div class="form-title">Register to begin your Voyage</div>
+                <form id="registrationForm">
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label for="name">Full Name</label>
+                      <input type="text" id="name" placeholder="Enter your name" required />
+                      <div class="error-text" id="errorName">Name is required.</div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="email">Email</label>
+                      <input type="email" id="email" placeholder="you@example.com" required />
+                      <div class="error-text" id="errorEmail">Please enter a valid email.</div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="phone">Phone (10 digits)</label>
+                      <input type="tel" id="phone" placeholder="1234567890" maxlength="10" required />
+                      <div class="error-text" id="errorPhone">Phone must be 10 digits.</div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="pin">PIN Code (6 digits)</label>
+                      <input type="text" id="pin" placeholder="500001" maxlength="6" required />
+                      <div class="error-text" id="errorPin">PIN must be 6 digits.</div>
+                    </div>
+                  </div>
+
+                  <div class="form-actions">
+                    <button type="submit">Continue to destinations</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <div>
+              <div class="hero-image-card">
+                <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=80" alt="Adventure travel" />
+                <div class="hero-image-overlay">
+                  <div>
+                    <div class="hero-image-sub">Featured journey</div>
+                    <div class="hero-image-heading">Alpine Escape, Switzerland</div>
+                  </div>
+                  <div class="hero-image-tag">7D · 6N · Simulated</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 2: Travel Blog -->
+      <section class="page" id="page2">
+
+        <div class="sticky-blog-nav">
+          <div class="container blog-nav-inner">
+            <a href="#sec-paris">Paris</a>
+            <a href="#sec-tokyo">Tokyo</a>
+            <a href="#sec-rome">Rome</a>
+            <a href="#sec-dubai">Dubai</a>
+            <a href="#sec-bali">Bali</a>
+          </div>
+        </div>
+
+        <div class="container">
+          <h2 class="page-heading">Destinations to spark your itinerary.</h2>
+          <p class="page-subtitle">Scroll through a few sample city flows.</p>
+
+          <!-- PARIS -->
+          <div id="sec-paris" class="blog-section">
+            <div class="blog-section-card">
+              <div class="blog-tag">Europe · City of Lights</div>
+              <h3 class="blog-title">Sunsets over the Seine.</h3>
+              <p class="blog-text">Stroll through cobbled streets and cafés.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1200&q=80" />
+          </div>
+
+          <!-- TOKYO -->
+          <div id="sec-tokyo" class="blog-section">
+            <img src="https://images.unsplash.com/photo-1477959858617-67f85cf4f1df?auto=format&fit=crop&w=1200&q=80" />
+            <div class="blog-section-card">
+              <div class="blog-tag">Asia · Neon Dreams</div>
+              <h3 class="blog-title">Shibuya crossings.</h3>
+              <p class="blog-text">High-energy nights with peaceful temples.</p>
+            </div>
+          </div>
+
+          <!-- ROME -->
+          <div id="sec-rome" class="blog-section">
+            <div class="blog-section-card">
+              <div class="blog-tag">Europe · Timeless Streets</div>
+              <h3 class="blog-title">Colosseum by day.</h3>
+              <p class="blog-text">Walk through living history.</p>
+            </div>
+            <img src="https://images.pexels.com/photos/532263/pexels-photo-532263.jpeg?auto=compress&cs=tinysrgb&w=1200" />
+          </div>
+
+          <!-- DUBAI -->
+          <div id="sec-dubai" class="blog-section">
+            <img src="https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1200&q=80" />
+            <div class="blog-section-card">
+              <div class="blog-tag">Middle East</div>
+              <h3 class="blog-title">Desert dunes & skyline.</h3>
+            </div>
+          </div>
+
+          <!-- BALI -->
+          <div id="sec-bali" class="blog-section">
+            <div class="blog-section-card">
+              <div class="blog-tag">Asia · Island Calm</div>
+              <h3 class="blog-title">Rice terraces & rituals.</h3>
+            </div>
+            <img src="https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg?auto=compress&cs=tinysrgb&w=1200" />
+          </div>
+
+          <div class="page-actions">
+            <button onclick="showPage('page3')">Open trip planner</button>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- PAGE 3: Planner -->
+      <section class="page" id="page3">
+        <div class="container">
+          <div class="planner-grid">
+
+            <div class="planner-column">
+              <h2>Build your itinerary.</h2>
+              <p>Choose travel, food & activity options.</p>
+
+              <!-- Travel -->
+              <div class="option-group">
+                <div class="option-group-title">Travel options</div>
+                <div class="option-list">
+                  <label class="option-card">
+                    <div class="option-main"><span>Economy Flight</span><span>₹18,000</span></div>
+                    <input type="checkbox" class="price-option" data-price="18000" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>Business Flight</span><span>₹45,000</span></div>
+                    <input type="checkbox" class="price-option" data-price="45000" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>High-speed Train</span><span>₹12,000</span></div>
+                    <input type="checkbox" class="price-option" data-price="12000" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>Local Transfers</span><span>₹3,500</span></div>
+                    <input type="checkbox" class="price-option" data-price="3500" />
+                  </label>
+                </div>
+              </div>
+
+              <!-- Food -->
+              <div class="option-group">
+                <div class="option-group-title">Food packages</div>
+                <div class="option-list">
+                  <label class="option-card">
+                    <div class="option-main"><span>Standard Meals</span><span>₹4,000</span></div>
+                    <input type="checkbox" class="price-option" data-price="4000" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>Local Food Tour</span><span>₹6,500</span></div>
+                    <input type="checkbox" class="price-option" data-price="6500" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>Fine Dining</span><span>₹9,000</span></div>
+                    <input type="checkbox" class="price-option" data-price="9000" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>Street Food Explorer</span><span>₹3,000</span></div>
+                    <input type="checkbox" class="price-option" data-price="3000" />
+                  </label>
+                </div>
+              </div>
+
+              <!-- Activities -->
+              <div class="option-group">
+                <div class="option-group-title">Activities</div>
+                <div class="option-list">
+                  <label class="option-card">
+                    <div class="option-main"><span>City Tour</span><span>₹3,500</span></div>
+                    <input type="checkbox" class="price-option" data-price="3500" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>Adventure</span><span>₹8,000</span></div>
+                    <input type="checkbox" class="price-option" data-price="8000" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>Sunset Cruise</span><span>₹5,500</span></div>
+                    <input type="checkbox" class="price-option" data-price="5500" />
+                  </label>
+
+                  <label class="option-card">
+                    <div class="option-main"><span>Spa Day</span><span>₹6,000</span></div>
+                    <input type="checkbox" class="price-option" data-price="6000" />
+                  </label>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Summary -->
+            <div class="summary-card">
+              <div class="summary-title">Trip summary</div>
+              <div class="summary-line"><span>Base simulation fee</span><span>₹0</span></div>
+              <div class="summary-line"><span>Selected options</span><span id="summaryItemsCount">0</span></div>
+
+              <div class="summary-total" id="summaryTotal">₹0</div>
+
+              <button onclick="openConfirmationModal()">Confirm my journey</button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- PAGE 4: Thank You -->
+      <section class="page" id="page4">
+        <div class="container">
+          <div class="thankyou">
+            <div class="thankyou-card">
+              <div class="thankyou-title">Your voyage is ready ✨</div>
+              <div class="thankyou-text">Thank you for completing the simulation.</div>
+
+              <div class="thankyou-actions">
+                <button onclick="showPage('page1')">Back to start</button>
+                <button class="btn-ghost" onclick="showPage('page2')">Revisit destinations</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+ 
+  <script src="script.js"></script>
+
+</body>
+</html>
